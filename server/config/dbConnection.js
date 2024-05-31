@@ -1,15 +1,11 @@
 import mongoose from "mongoose";
 
-const dbConnection = async()=>{
-    try {
-        const res = await mongoose.connect(`${process.env.MONGO_URI}/PG_DATABASE`)
-        if(res){
-            console.log("Database connected")
-        }
-    } catch (error) {
-        console.log("Database could not be connected" + error);
-    }
-   
+const dbConnection = ()=>{
+     mongoose.connect(`${process.env.MONGO_URI}/pg_database`).then(()=>{
+        console.log("Database connected");
+     }).catch(()=>{
+        console.log("Database connection failed");
+     })
 }
 
 export default dbConnection;
