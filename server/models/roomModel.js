@@ -29,6 +29,10 @@ const roomSchema = new mongoose.Schema({
     isBooked:{
         type:Boolean,
         default:false
+    },
+    image:{
+        type:String,
+        default:''
     }
 })
 

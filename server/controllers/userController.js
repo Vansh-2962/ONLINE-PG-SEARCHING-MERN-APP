@@ -30,7 +30,6 @@ export const register = async(req,res)=>{
     const newUser = await User.create({
         fullname,
         password : hashedPassword,
-        confirmPassword,
         email,
         role
     })

@@ -9,17 +9,13 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    confirmPassword:{
-        type:String,
-        required:true
-    },
     email:{
         type:String,
         required:true
     },
     role:{
         type:String,
-        enum:['seeker','poster'],
+        enum:['Seeker','Poster'],
         required:true
     }
 },{timestamps:true})
