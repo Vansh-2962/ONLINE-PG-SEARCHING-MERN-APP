@@ -8,6 +8,38 @@ body{
 }
 
 .active{
-    border-bottom: 2px solid black;
+    color:cyan;
     transition:0.2s;
 }
+
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-30%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .slide-in {
+    animation: slideIn 1s forwards;
+  }
+  
+  .slide-out {
+    animation: slideOut 1s forwards;
+  }
+  

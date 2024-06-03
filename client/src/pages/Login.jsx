@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import '../index.css'
+import { UserContext } from '../Context/UserContext'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const { user, setUser } = useContext(UserContext)
   const navigate = useNavigate()
 
   // login handler
@@ -21,15 +23,17 @@ const Login = () => {
       )
       .then((response) => {
         toast.success(`Welcome ${response.data.fullname}`)
+        setUser(response.data)
+        console.log(response)
         if (response.data.role === 'Poster') {
-          navigate('/poster')
+          navigate('/poster/home/')
         } else {
-          navigate('/seeker')
+          navigate('/seeker/home')
         }
       })
       .catch((err) => {
         console.log(err)
-        toast.error(err.response.data.msg)
+        toast.error(err.response?.data?.msg || 'Login failed')
       })
 
     setEmail('')
