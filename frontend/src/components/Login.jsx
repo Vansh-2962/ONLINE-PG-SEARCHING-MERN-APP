@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await axios.post(
-        'https://pgsolutions-backend.onrender.com/login',
+        'https://pgsolutions-backend.onrender.com/api/v1/user/login',
         { email, password },
         { withCredentials: true },
       )
