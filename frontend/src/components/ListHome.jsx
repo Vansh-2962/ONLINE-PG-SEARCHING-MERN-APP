@@ -26,7 +26,7 @@ const ListHome = () => {
       formData.append('price', price)
       formData.append('file', file)
       const res = await axios.post(
-        `http://localhost:8000/api/v1/room/createPG/${authUser._id}`,
+        `https://pgsolutions-backend.onrender.com/api/v1/room/createPG/${authUser._id}`,
         formData,
         {
           withCredentials: true,
