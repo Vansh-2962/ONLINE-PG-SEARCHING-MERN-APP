@@ -15,7 +15,7 @@ const Navbar = () => {
     e.preventDefault()
     try {
       const response = await axios.get(
-        'http://localhost:8000/api/v1/user/logout',
+        'https://pgsolutions-backend.onrender.com/logout',
       )
       toast.success(response.data.msg)
       navigate('/login')
