@@ -17,7 +17,7 @@ const Rooms = () => {
   useEffect(() => {
     const getAllRooms = async () => {
       const res = await axios.get(
-        'http://localhost:8000/api/v1/room/getAllRooms',
+        'https://pgsolutions-backend.onrender.com/getAllRooms',
       )
       if (res) {
         console.log(res.data)
