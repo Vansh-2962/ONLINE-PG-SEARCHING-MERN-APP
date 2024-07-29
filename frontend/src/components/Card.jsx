@@ -24,7 +24,7 @@ const Card = ({ data }) => {
     setShowOwner(true)
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/room/getOwnerDetails/${id}`,
+        `https://pgsolutions-backend.onrender.com/api/v1/room/getOwnerDetails/${id}`,
       )
       console.log('API response:', res.data)
       if (res && res.data) {
