@@ -20,7 +20,7 @@ const Signup = () => {
   const signupHandler = async (e) => {
     e.preventDefault()
     await axios
-      .post('http://localhost:8000/api/v1/user/signup', {
+      .post('https://pgsolutions-backend.onrender.com/signup', {
         fullname,
         email,
         password,
