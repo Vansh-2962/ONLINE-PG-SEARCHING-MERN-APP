@@ -18,7 +18,7 @@ const Home = () => {
     e.preventDefault()
     try {
       const response = await axios.get(
-        'http://localhost:8000/api/v1/user/logout',
+        'https://pgsolutions-backend.onrender.com/api/v1/user/logout',
       )
       toast.success(response.data.msg)
       navigate('/login')
