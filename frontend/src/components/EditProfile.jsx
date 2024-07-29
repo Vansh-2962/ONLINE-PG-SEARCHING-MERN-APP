@@ -36,7 +36,7 @@ const EditProfile = ({ data, onProfileUpdate }) => {
     console.log(data)
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/v1/user/editProfile/${data._id}`,
+        `https://pgsolutions-backend.onrender.com/api/v1/user/editProfile/${data._id}`,
         formData,
         {
           withCredentials: true,
