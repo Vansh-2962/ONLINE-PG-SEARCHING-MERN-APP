@@ -25,7 +25,7 @@ const Profile = () => {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          `https://pgsolutions-backend.onrender.com/getUser/${authUser?._id}`,
+          `https://pgsolutions-backend.onrender.com/api/v1/user/getUser/${authUser?._id}`,
         )
         if (res.data) {
           setUser(res.data)
